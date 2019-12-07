@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Modes Summary Chart
 
-var models_accuracy = [[0.5820, 'Decision Tree'],
+var models_accuracy2 = [[0.5820, 'Decision Tree'],
 [0.6137, 'Random Forest'],
 [0.5925, 'Neural Network'],
 [0.577, 'K Nearest Neighbors'],
@@ -10,19 +10,19 @@ var models_accuracy = [[0.5820, 'Decision Tree'],
 [0.6137, 'Logistic Regression'],
 [0.6253, 'Pyspark']]
 
-var accuracy = models_accuracy.map(function(item, index) {
+var accuracy2 = models_accuracy2.map(function(item, index) {
    return ((item[0]).toFixed(4)+'%');
  });
 
-console.log(weight);
+// console.log(weight);
 
-var model = models_accuracy.map(function(item, index) {
+var model2 = models_accuracy2.map(function(item, index) {
    return item[1];
  });
 
-console.log(feature);
+// console.log(feature);
 
-var trace_summary = {
+var trace_summary2 = {
      x: model,
      y: accuracy,
      type: "bar",
@@ -31,7 +31,7 @@ var trace_summary = {
    
    };
 
-var layout_summary = {
+var layout_summary2 = {
        title: "Model Accuracy",
        xaxis: { title: "Model",},
        yaxis: { title: "Accuracy",tickformat: ',.2%'},
@@ -43,10 +43,10 @@ var layout_summary = {
          b: 100
        }};
      
-var data_summary = [trace_summary];
+var data_summary2 = [trace_summary2];
 
    //plot the bar chart
-Plotly.newPlot("model_summary", data_summary,layout_summary);
+Plotly.newPlot("model_summary2", data_summary2,layout_summary2);
  
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Ramdom Forest Features Importances

@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Ramdom Tree Features Importances
+// Ramdom Tree Features Importances for year model
  var feature_importances = [[0.12478, 'duration_ms'],
  [0.12285209790467314, 'loudness'],
  [0.09632080010895092, 'energy'],
@@ -19,13 +19,13 @@
     return ((item[0]).toFixed(4)+'%');
   });
 
- console.log(weight);
+//  console.log(weight);
 
  var feature = feature_importances.map(function(item, index) {
     return item[1];
   });
 
- console.log(feature);
+//  console.log(feature);
 
 var trace1 = {
       y: feature,
@@ -37,7 +37,7 @@ var trace1 = {
     };
 
 var layout = {
-        title: "Feauture Importances of Random Forest",
+        title: "Feauture Importances of Random Forest - Published Year Prediction",
         xaxis: { title: "Weights",tickformat: ',.2%'},
         yaxis: { title: "Features",autorange:"reversed"},
         
@@ -124,3 +124,56 @@ Plotly.d3.csv('3d_RandomForest.csv', function(err, rows){
       Plotly.newPlot('3d', data, layout2);
   
   });
+
+// Ramdom Tree Features Importances for popularity model
+var feature_importances2 = [[0.11043033537036605, 'speechiness'],
+  [0.11030668722446511, 'duration_ms'],
+  [0.10079099671720887, 'tempo'],
+  [0.09575117609070352, 'loudness'],
+  [0.08817878069543118, 'instrumentalness'],
+  [0.08689751084986462, 'acousticness'],
+  [0.085906870322989, 'valence'],
+  [0.08533999250034477, 'energy'],
+  [0.08357862714606375, 'liveness'],
+  [0.08251592925401793, 'danceability'],
+  [0.0493828610150668, 'key'],
+  [0.014017307284972141, 'mode'],
+  [0.006902925528506188, 'time_signature']];
+ 
+  
+var weight2 = feature_importances2.map(function(item, index) {
+  return ((item[0]).toFixed(4)+'%');
+});
+ 
+// console.log(weight);
+ 
+var feature2 = feature_importances2.map(function(item, index) {
+  return item[1];
+});
+ 
+// console.log(feature);
+ 
+var trace2 = {
+    x: weight2,
+    y: feature2,
+    type: "bar",
+    text: feature2,
+    orientation: "h"
+};
+ 
+var layout2 = {
+    title: "Feauture Importances of Random Forest - Popularity Prediction",
+    xaxis: { title: "Weights",tickformat: ',.2%'},
+    yaxis: { title: "Features",autorange:"reversed"},
+         
+    margin: {
+      l: 100,
+      r: 100,
+      t: 100,
+      b: 100
+    }};
+       
+var dataforbar2 = [trace2];
+ 
+//plot the bar chart
+Plotly.newPlot("feature_importances2", dataforbar2,layout2);
