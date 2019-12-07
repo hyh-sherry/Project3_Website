@@ -10,8 +10,8 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="static/reset.css">
+    <link rel="stylesheet" href="static/style.css">
 </head>
 
 <body>
@@ -37,50 +37,58 @@
     </div>
   </nav>
 
+<br>
 
 <!-- Second Container -->
 <div class="container">
   <div class="row" style="margin: 20px;">
     <div class="col-md-12">
-      <h1>Visualization</h1>
-      <h3>Datasets Exploration</h3>
+      <h1 style="font-size: 30px; padding: 0px;">Visualization - Datasets Exploration</h1>
     </div>
   </div>
-
+  <br>
   <div class="row" style="margin: 20px;">
     <div class="col-md-7" >
       <h3>Radar Chart</h3>
-      <img src="static/image/radar-dictinct2.png" alt="radar" width=600px height=auto>
+      <br>
+      <img src="static/image/radar-dictinct2.png" alt="radar" width=85%>
     </div>
     <div class="col-md-5">
       <h3>Distribution by line chart</h3>
       <h4>(Click the chart to see more)</h4>
+      <br>
       <a href="https://public.tableau.com/profile/yidan7394#!/vizhome/DBKeyFeatures/1_DBKeyFeatures"
         target="blank">
-        <img src="static/image/tableau.jpeg" alt="tableau link" width=600px></a>
+        <img src="static/image/tableau.jpeg" alt="tableau link" width=120%></a>
     </div>
-    <div class="row" style="margin: 20px;">
+  </div>
+  <br>
+  <div class="row" style="margin: 20px;">
       <div class="col-md-7" >
         <h3>Radar Chart collapsed</h3>
-        <img src="static/image/radar-collapsed.png" alt="radar" width=600px height=auto>
+        <br>
+        <img src="static/image/radar-collapsed.png" alt="radar" width=85%>
       </div>
       <div class="col-md-5" >
         <h3>Distribution by bar & scatter plot </h3>
         <h4>(Click the chart to see more)</h4>
-        <a href="https://public.tableau.com/profile/yidan7394#!/vizhome/DBKeyFeatures/Dashboard3?publish=yes" target="blank"><img src="static/image/kf3.jpg" alt="radar" width=700px height=auto></a>
+        <br>
+        <a href="https://public.tableau.com/profile/yidan7394#!/vizhome/DBKeyFeatures/Dashboard3?publish=yes" target="blank">
+          <img src="static/image/kf3.jpg" alt="radar" width=140%></a>
       </div>
     </div>
     <br>
     <br>
-    <div class="col-md-12">
+    <div class="col-md-12" style= "margin: 20px;">
         <h3>Highlights:</h3>
+        <br>
         <ul>
-          <li>Principal positive audio features (radar charts):</li>
+          <li id="data_page_li"><strong id="data_page_titles">Principal positive audio features (radar charts):</strong></li>
             <p>The 7 audio features (0~1) have very similar patterns in the 4 years being studied.</p>
-          <li>Only negative feature (loudness):</li>
+          <li id="data_page_li"><strong id="data_page_titles">Only negative feature (loudness):</strong></li>
             <p>Our loudness data is all negative ranging mainly from (0,-8), showing no huge discrepancy year over year. 
             </p>
-            <li>Other features at a glance(Tableau Public):</li>
+            <li id="data_page_li"><strong id="data_page_titles">Other features at a glance(Tableau Public):</strong></li>
             <p>Other audio features have fairly different scale than those discussed earlier, thus they are graphed seperatly. </p>
         </ul>
     </div>
