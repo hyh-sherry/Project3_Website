@@ -45,6 +45,7 @@ div.content {
   font-size:130%;
 }
 
+
 </style>
 
 
@@ -59,7 +60,7 @@ div.content {
 <body>
 
   <!-- Navbar -->
-<nav class="navbar navbar-default" style="margin-bottom:0px;">
+<nav class="navbar navbar-default  " style="margin-bottom:0px">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -72,7 +73,8 @@ div.content {
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
           <li><a href="../viz.html">VISUALIZATION</a></li>
-          <li><a href="models_overview.html">MACHINE LEARNING</a></li>
+          <li><a href="models_overview.html">MACHINE LEARNING_1</a></li>
+          <li><a href="../models_html_pop/models_overview.html" style="font-size: 14px;">MACHINE LEARNING_2</a></li>
           <li><a href="../data.html">DATA</a></li>
         </ul>
       </div>
@@ -83,12 +85,12 @@ div.content {
 
 <!-- Second Container -->
 <div class="sidebar">
-  <a href="models_overview.html">Models Overview</a>  
+  <a href="models_overview.html">Models Overview</a> 
   <a href="DT.html">Decision Tree</a>
-  <a href="RF.html">Random Forest</a>
+  <a class="active" href="RF.html">Random Forest</a>
   <a href="NN.html">Neural Network</a>
   <a href="KNN.html">K-Nearest Neighbors </a>
-  <a class="active" href="GNB.html">Gaussian Naive Bayes </a>
+  <a href="GNB.html">Gaussian Naive Bayes </a>
   <a href="SVM.html">Support Vector Machines </a>
   <a href="LR.html">Logistic Regression</a>
   <a href="pyspark.html">PySpark</a>
@@ -96,18 +98,26 @@ div.content {
 </div>
 
 <div class="content">
-  <h2>Gaussian Naive Bayes (GaussianNB)</h2>
+  <h2>Random Forest</h2>
   <br>
-  <p>The next algorithm we tried is Gaussian Naïve Bayes model, where we tried to learn our model from a given set of attributes (in training examples) and then form a hypothesis or a relation to a response variable. Then we use this relation to predict a response, given attributes of a new instance. Using the Bayes’ theorem, it’s possible to build a learner that predicts the probability of the response variable belonging to some class, given a new set of attributes.</p>
+  <p>We then used the Random forest algorithm, which consists of a large number of individual decision trees that operate as an ensemble. Each individual tree in the random forest spits out a class prediction and the class with the most votes becomes our model’s prediction.</p>
   <br>
-  <p>GDA fits a probability distribution to positive and negative examples, and calculates the decision boundary that maximizes the logarithmic likelihood on the training set, using the following equations. </p>
+  <p>The reason we choose this model is that it contains a large number of relatively uncorrelated models (trees) operating as a committee, which will outperform any of the individual constituent models. These uncorrelated models can produce ensemble predictions that are more accurate than any of the individual predictions. The reason for this wonderful effect is that the trees protect each other from their individual errors.</p>
   <br>
-  <p> This model gives a test accuracy of 0.3740.The following table displays the confusion matrix of this model.</p>
+  <p> This model gives a test accuracy of 0.4427.</p>
   <br>
-  <img src="..\static/image/cm_year_gnb.jpg" alt="tree" width=450px style="display:block;margin-left: auto; margin-right: auto;">
+  <div id="feature_importances" class="container-fluid bg-2 text-center" style="width: 680px; height: 400px;"></div>
+  <br>
+  <p>We used the three features with the highest importance to plot the following 3D graph.</p>
+  <br>
+  <div id="3d" class="container-fluid bg-2 text-center" style="width: 680px; height: 400px;"></div>
+  <br>
+  <div id="feature_importances2" class="container-fluid bg-2 text-center" style="width: 680px; height: 400px;"></div>
 </div>
 
-<script src="../model.js"></script>  
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="..\RF_graph.js"></script>  
 
 </body>
 </html>

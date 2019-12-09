@@ -45,7 +45,6 @@ div.content {
   font-size:130%;
 }
 
-
 </style>
 
 
@@ -60,7 +59,7 @@ div.content {
 <body>
 
   <!-- Navbar -->
-<nav class="navbar navbar-default  " style="margin-bottom:0px">
+<nav class="navbar navbar-default" style="margin-bottom:0px;">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -73,7 +72,8 @@ div.content {
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
           <li><a href="../viz.html">VISUALIZATION</a></li>
-          <li><a href="models_overview.html">MACHINE LEARNING</a></li>
+          <li><a href="models_overview.html">MACHINE LEARNING_1</a></li>
+          <li><a href="../models_html_pop/models_overview.html" style="font-size: 14px;">MACHINE LEARNING_2</a></li>
           <li><a href="../data.html">DATA</a></li>
         </ul>
       </div>
@@ -84,31 +84,31 @@ div.content {
 
 <!-- Second Container -->
 <div class="sidebar">
-  <a href="models_overview.html">Models Overview</a> 
+  <a href="models_overview.html">Models Overview</a>  
   <a href="DT.html">Decision Tree</a>
   <a href="RF.html">Random Forest</a>
   <a href="NN.html">Neural Network</a>
   <a href="KNN.html">K-Nearest Neighbors </a>
-  <a href="GNB.html">Gaussian Naive Bayes </a>
+  <a class="active" href="GNB.html">Gaussian Naive Bayes </a>
   <a href="SVM.html">Support Vector Machines </a>
-  <a class="active" href="LR.html">Logistic Regression</a>
+  <a href="LR.html">Logistic Regression</a>
   <a href="pyspark.html">PySpark</a>
   <a href="conclusion.html">Conclusion & Possible Improvements</a>
 </div>
 
 <div class="content">
-  <h2>Logistic Regression</h2>
+  <h2>Gaussian Naive Bayes (GaussianNB)</h2>
   <br>
-  <p>Our final approach was to use the Logistic Regression algorithm with the labels of a randomly selected 20 percent of the examples. This algorithm assigns observations to a discrete set of classes. It transforms its output using the logistic sigmoid function to return a probability value which can then be mapped to two or more discrete classes.</p>
+  <p>The next algorithm we tried is Gaussian Naïve Bayes model, where we tried to learn our model from a given set of attributes (in training examples) and then form a hypothesis or a relation to a response variable. Then we use this relation to predict a response, given attributes of a new instance. Using the Bayes’ theorem, it’s possible to build a learner that predicts the probability of the response variable belonging to some class, given a new set of attributes.</p>
   <br>
-  <p>For each supervised learning algorithm, we split the data into training and validation examples using a 75/25 split. An additional test set was not needed. We tested the accuracy against both the training and validation labels. LR fits a decision boundary to the data. LR uses Newtons Method to maximise the logarithmic likelihood on the training set, with the following algorithm. </p>
+  <p>GDA fits a probability distribution to positive and negative examples, and calculates the decision boundary that maximizes the logarithmic likelihood on the training set, using the following equations. </p>
   <br>
-  <p> This model gives a test accuracy of 0.4096.The following table displays the confusion matrix of this model.</p>
+  <p> This model gives a test accuracy of 0.3740.The following table displays the confusion matrix of this model.</p>
   <br>
-  <img src="..\static/image/cm_year_lg.jpg" alt="tree" width=450px style="display:block;margin-left: auto; margin-right: auto;">
+  <img src="..\static/image/cm_year_gnb.jpg" alt="tree" width=450px style="display:block;margin-left: auto; margin-right: auto;">
 </div>
 
-<script src="..\model.js"></script>  
+<script src="../model.js"></script>  
 
 </body>
 </html>

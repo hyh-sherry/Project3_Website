@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- Theme  -->
-  <title>Music X Project</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
+    <!-- Theme  -->
+    <title>Music X Project</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
 
 .sidebar {
   margin: 0;
@@ -59,7 +59,7 @@ div.content {
 
 <body>
 
-<!-- Top Navbar -->
+  <!-- Navbar -->
 <nav class="navbar navbar-default  " style="margin-bottom:0px">
     <div class="container">
       <div class="navbar-header">
@@ -73,7 +73,8 @@ div.content {
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
           <li><a href="../viz.html">VISUALIZATION</a></li>
-          <li><a href="models_overview.html">MACHINE LEARNING</a></li>
+          <li><a href="models_overview.html">MACHINE LEARNING_1</a></li>
+          <li><a href="../models_html_pop/models_overview.html" style="font-size: 14px;">MACHINE LEARNING_2</a></li>
           <li><a href="../data.html">DATA</a></li>
         </ul>
       </div>
@@ -81,37 +82,41 @@ div.content {
   </nav>
 
 
+
 <!-- Second Container -->
 <div class="sidebar">
-  <a href="models_overview.html">Models Overview</a>  
-  <a class="active" href="DT.html">Decision Tree</a>
+  <a href="models_overview.html">Models Overview</a> 
+  <a href="DT.html">Decision Tree</a>
   <a href="RF.html">Random Forest</a>
   <a href="NN.html">Neural Network</a>
   <a href="KNN.html">K-Nearest Neighbors </a>
   <a href="GNB.html">Gaussian Naive Bayes </a>
-  <a href="SVM.html">Support Vector Machines </a>
+  <a href="SVM.html">Support Vector Machines</a>
   <a href="LR.html">Logistic Regression</a>
   <a href="pyspark.html">PySpark</a>
-  <a href="conclusion.html">Conclusion & Possible Improvements</a>
+  <a class="active" href="conclusion.html">Conclusion & Possible Improvements</a>
 </div>
 
 <div class="content">
-  <h2>Decision Tree</h2>
+  <h2>Conclusion</h2>
   <br>
-  <p>For an initial identification of clusters in the data, we used the Decision Tree to creates a series of decision boundaries on the training set. Each boundary splits the data into two clusters (within the current cluster) at a value of a feature that minimizes the Gini loss. </p>
+  <p>The aim of this work was to further investigate whether or not it is possible to use machine learning techniques to predict hit songs. Our work could not confirm that it is possible (the average accuracy of 7 models we selected was 39%), although some other research has shown more promising results. So the result we derived is only based on the dataset we selected and the models we built. </p>
   <br>
-  <p> This model gives a test accuracy of 0.3079.</p>
-  <div id="feature_importances2" class="container-fluid bg-2 text-center" style="width: 680px; height: 400px;"></div>
-  <img src="..\static/image/tree_year.png" alt="tree" width=600px style="display:block;margin-left: auto; margin-right: auto;">
-
+  <hr>
+  <h2>Possible Improvements and Future Work</h2>
   <br>
-  <div id="feature_importances2_pop" class="container-fluid bg-2 text-center" style="width: 680px; height: 400px;"></div>
-
+  <p>There are a number of improvements that would be interesting to consider for future research within this field. </p>
+  <br>
+  <ul>
+    <li>We could use more features than we did in our research. We believe that including more metadata such as genre, label, lyrics, artist name, and artist popularity would improve the accuracy of the models considerably. </li>
+    <br>
+    <li>Since all songs in our dataset are ‘recent’ songs only, which eliminates the fact that hit music evolves over time. With a future expansion in music released years, higher accuracies may be achieved.</li>
+    <br>
+    <li>The datasets of hit and non-hit music are unbalanced in music types because of the data source we acquired. The hit music dataset covers more diverse types.  A future expansion of non-hit music by adding more diverse subdivided music types, which we believe will yield higher accuracy and better results.</li>
+</ul>
 </div>
 
-<script src="https://d3js.org/d3.v5.min.js"></script>
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-<script src="..\DT_graph.js"></script>  
+<script src="..\model.js"></script>  
 
 </body>
 </html>

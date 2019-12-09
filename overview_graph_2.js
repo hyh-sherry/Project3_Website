@@ -2,51 +2,51 @@
 // Models Summary Chart
 
 // Models for year prediction
-var models_accuracy = [[0.3079, 'Decision Tree'],
-[0.4427, 'Random Forest'],
-[0.4020, 'Neural Network'],
-[0.402, 'K Nearest Neighbors'],
-[0.3740, 'Gaussian Naive Bayes'],
-[0.40, 'Support Vector Machine'],
-[0.4096, 'Logistic Regression']]
+// var models_accuracy = [[0.3079, 'Decision Tree'],
+// [0.4427, 'Random Forest'],
+// [0.4020, 'Neural Network'],
+// [0.402, 'K Nearest Neighbors'],
+// [0.3740, 'Gaussian Naive Bayes'],
+// [0.40, 'Support Vector Machine'],
+// [0.4096, 'Logistic Regression']]
 
-var accuracy = models_accuracy.map(function(item, index) {
-   return ((item[0]).toFixed(4)+'%');
- });
+// var accuracy = models_accuracy.map(function(item, index) {
+//    return ((item[0]).toFixed(4)+'%');
+//  });
 
-// console.log(weight);
+// // console.log(weight);
 
-var model = models_accuracy.map(function(item, index) {
-   return item[1];
- });
+// var model = models_accuracy.map(function(item, index) {
+//    return item[1];
+//  });
 
-// console.log(feature);
+// // console.log(feature);
 
-var trace_summary = {
-     x: model,
-     y: accuracy,
-     type: "bar",
-     text: model
-     //orientation: "h"
+// var trace_summary = {
+//      x: model,
+//      y: accuracy,
+//      type: "bar",
+//      text: model
+//      //orientation: "h"
    
-   };
+//    };
 
-var layout_summary = {
-       title: "Model Accuracy - Published Year Predcition",
-       xaxis: { title: "Model",},
-       yaxis: { title: "Accuracy",tickformat: ',.2%'},
+// var layout_summary = {
+//        title: "Model Accuracy - Published Year Predcition",
+//        xaxis: { title: "Model",},
+//        yaxis: { title: "Accuracy",tickformat: ',.2%'},
        
-       margin: {
-         l: 100,
-         r: 100,
-         t: 100,
-         b: 100
-       }};
+//        margin: {
+//          l: 100,
+//          r: 100,
+//          t: 100,
+//          b: 100
+//        }};
      
-var data_summary = [trace_summary];
+// var data_summary = [trace_summary];
 
-   //plot the bar chart
-Plotly.newPlot("model_summary", data_summary,layout_summary);
+//    //plot the bar chart
+// Plotly.newPlot("model_summary", data_summary,layout_summary);
 
 
 //Models for popularity prediction
@@ -95,5 +95,5 @@ var layout_summary2 = {
 var data_summary2 = [trace_summary2];
 
    //plot the bar chart
-Plotly.newPlot("model_summary2", data_summary2,layout_summary2);
+Plotly.newPlot("model_summary", data_summary2,layout_summary2);
  
